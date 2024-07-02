@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Test</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+      }
+
+      .dropdown {
+        margin-bottom: 10px;
+      }
+      .dropdown select {
+        padding: 5px;
+      }
+      .dropdown input {
+        margin-top: 10px;
+        padding: 5px;
+      }
+      .dropdown button {
+        cursor: pointer;
+        padding: 5px;
+      }
+
+      .container .divided {
+        width: 100%;
+        border: 2px solid gray;
+        margin-bottom: 20px;
+      }
+      .form-input {
+        margin-bottom: 15px;
+      }
+      .form-input label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .form-input input[type="text"],
+      .form-input input[type="email"],
+      .form-input textarea {
+        width: 100%;
+        padding: 8px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      .form-input .btn-submit {
+        background-color: rgb(255, 52, 52);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .form-input .btn-submit:hover {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="dropdown">
+        <select name="dropdown" id="dropDown">
+          <option value="">---Select Convert Method---</option>
+          <option value="celsToFarn">Celsius to Fahrenheit</option>
+          <option value="farnToCels">Fahrenheit to Celsius</option>
+        </select>
+        <input type="text" id="inputValue" placeholder="Enter value" />
+        <button onclick="submitResult()" id="submitButton">Submit</button>
+      </div>
+      <p id="result"></p>
+
+      <div class="divided"></div>
+      <form onsubmit="return submitAll(event)">
+        <div class="form-input">
+          <label for="">Number 1</label>
+          <input type="text" id="noA" />
+        </div>
+
+        <div class="form-input">
+          <label for="">Number 2</label>
+          <input type="text" id="noB" />
+        </div>
+
+        <div class="form-input">
+          <label for="">Number 3</label>
+          <input type="text" id="noC" />
+        </div>
+
+        <div class="form-input">
+          <label for="">Large Number = <span id="result"></span></label>
+        </div>
+
+        <div class="form-input">
+          <button type="submit" class="btn-submit">Submit</button>
+        </div>
+      </form>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
